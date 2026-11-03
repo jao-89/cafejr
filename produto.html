@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - Café Júnior</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">Café Júnior</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="como-chegar.html">Como Chegar</a></li>
+      </ul>
+      <button class="cart-btn" onclick="toggleCart()">
+        🛒 Carrinho (<span id="cart-count">0</span>)
+      </button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Nossos Produtos</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=600&q=80" alt="Café Tradicional Júnior">
+        <h3>Café Tradicional</h3>
+        <p style="padding: 0 1rem 1rem; color: #666;">Pacote de 500g | Torra média, notas marcantes de chocolate e corpo aveludado.</p>
+        <div class="price">R$ 25,00</div>
+        <button class="btn-add" onclick="addToCart('Café Tradicional', 25.00)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="cart-modal" class="cart-modal">
+    <div class="cart-content">
+      <span class="close-cart" onclick="toggleCart()">×</span>
+      <h2>Seu Carrinho</h2>
+      <div id="cart-items"></div>
+      <p style="margin-top: 1rem;"><strong>Total: <span id="cart-total">R$ 0.00</span></strong></p>
+      <button class="btn-whatsapp" onclick="sendToWhatsApp()">Finalizar via WhatsApp</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Café Júnior. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
