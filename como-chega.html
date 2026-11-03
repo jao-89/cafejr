@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como Chegar - Café Júnior</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html" class="logo">Café Júnior</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="como-chegar.html">Como Chegar</a></li>
+      </ul>
+      <button class="cart-btn" onclick="toggleCart()">
+        🛒 Carrinho (<span id="cart-count">0</span>)
+      </button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2 class="section-title">Como Chegar</h2>
+    <div class="info-card">
+      <p><strong>Endereço:</strong> Rota das Montanhas, S/N - Zona Rural, Carmo do Rio Claro - MG</p>
+      <p><strong>Horário de Atendimento:</strong> Segunda a Sábado: 08h às 18h</p>
+      <p><strong>Telefone / WhatsApp:</strong> (35) 99999-9999</p>
+
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14902.327668541295!2d-46.1200000!3d-20.9700000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b4e13028448f7d%3A0x8687a77d1305bb65!2sCarmo%20do%20Rio%20Claro%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </main>
+
+  <div id="cart-modal" class="cart-modal">
+    <div class="cart-content">
+      <span class="close-cart" onclick="toggleCart()">×</span>
+      <h2>Seu Carrinho</h2>
+      <div id="cart-items"></div>
+      <p style="margin-top: 1rem;"><strong>Total: <span id="cart-total">R$ 0.00</span></strong></p>
+      <button class="btn-whatsapp" onclick="sendToWhatsApp()">Finalizar via WhatsApp</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Café Júnior. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
