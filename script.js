@@ -29,8 +29,8 @@ function updateCartUI() {
               ${item.quantity}x R$ ${item.price.toFixed(2)}
             </div>
             <div>
-              <button onclick="changeQuantity(${index}, -1)">-</button>
-              <button onclick="changeQuantity(${index}, 1)">+</button>
+              <button style="padding: 6px 14px; font-size: 18px; font-weight: bold; min-width: 36px; min-height: 36px; cursor: pointer;" onclick="changeQuantity(${index}, -1)">-</button>
+<button style="padding: 6px 14px; font-size: 18px; font-weight: bold; min-width: 36px; min-height: 36px; cursor: pointer;" onclick="changeQuantity(${index}, 1)">+</button>
             </div>
           </div>
         `;
