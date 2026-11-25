@@ -43,11 +43,19 @@ nav {
   gap: 1rem;
 }
 
+/* LOGO DO CAFÉ JÚNIOR */
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--accent-color);
+  display: flex;
+  align-items: center;
   text-decoration: none;
+}
+
+.logo img {
+  width: 55px;
+  height: 45px;
+  object-fit: contain;
+  border-radius: 6px;
+  display: block;
 }
 
 .nav-links {
