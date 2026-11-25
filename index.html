@@ -1,47 +1,89 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Café Júnior - O Autêntico Café de Montanha</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+  <!-- Cabeçalho e menu -->
   <header>
     <nav>
-      <a href="index.html" class="logo">Café Júnior</a>
+
+      <!-- LOGO COM A IMAGEM -->
+      <a href="index.html" class="logo">
+        <img src="jr.png" alt="Logo Café Júnior">
+      </a>
+
+      <!-- Links de navegação -->
       <ul class="nav-links">
         <li><a href="index.html">Início</a></li>
         <li><a href="produtos.html">Produtos</a></li>
         <li><a href="sobre.html">Sobre</a></li>
         <li><a href="como-chegar.html">Como Chegar</a></li>
       </ul>
+
+      <!-- Botão do carrinho -->
       <button class="cart-btn" onclick="toggleCart()">
         🛒 Carrinho (<span id="cart-count">0</span>)
       </button>
+
     </nav>
   </header>
 
+  <!-- Apresentação principal -->
   <section class="hero">
+
     <h1>Café Júnior</h1>
-    <p>Cultivado no coração das montanhas cafeeiras, oferecendo sabor puro e aroma incomparável.</p>
-    <a href="produtos.html" class="btn-cta">Ver Produtos</a>
+
+    <p>
+      Cultivado no coração das montanhas cafeeiras,
+      oferecendo sabor puro e aroma incomparável.
+    </p>
+
+    <a href="produtos.html" class="btn-cta">
+      Ver Produtos
+    </a>
+
   </section>
 
+  <!-- Modal do carrinho -->
   <div id="cart-modal" class="cart-modal">
+
     <div class="cart-content">
+
       <span class="close-cart" onclick="toggleCart()">×</span>
+
       <h2>Seu Carrinho</h2>
+
       <div id="cart-items"></div>
-      <p style="margin-top: 1rem;"><strong>Total: <span id="cart-total">R$ 0.00</span></strong></p>
-      <button class="btn-whatsapp" onclick="sendToWhatsApp()">Finalizar via WhatsApp</button>
+
+      <p style="margin-top: 1rem;">
+        <strong>
+          Total: <span id="cart-total">R$ 0.00</span>
+        </strong>
+      </p>
+
+      <button class="btn-whatsapp" onclick="sendToWhatsApp()">
+        Finalizar via WhatsApp
+      </button>
+
     </div>
   </div>
 
+  <!-- Rodapé -->
   <footer>
     <p>© 2026 Café Júnior. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- JavaScript -->
   <script src="script.js"></script>
+
 </body>
 </html>
