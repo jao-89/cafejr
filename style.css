@@ -48,29 +48,22 @@ nav {
     flex-direction: column;
   }
 
-  .logo {
-    width: 40px;
-    height: 40px;
-  }
-
-  .logo img {
-    max-width: 40px;
-    max-height: 40px;
-  }
+ 
 
   .hero h1 {
     font-size: 2.2rem;
   }
 }
-/* LOGO DO CAFÉ JÚNIOR */
-/* LOGO CAFÉ JÚNIOR */
+/* LOGO REDONDA DO CAFÉ JÚNIOR */
 .logo {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-shrink: 0;
   width: 45px;
   height: 45px;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .logo img {
@@ -79,9 +72,9 @@ nav {
   height: 100%;
   max-width: 45px;
   max-height: 45px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 50%;
 }
-
 .nav-links {
   list-style: none;
   display: flex;
