@@ -1,89 +1,293 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Café Júnior - O Autêntico Café de Montanha</title>
+  <title>Galeria - Café Júnior</title>
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* TÍTULO DA PÁGINA */
+    .gallery-header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #efebe9;
+    }
+
+    .gallery-header h1 {
+      color: #3e2723;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .gallery-header p {
+      color: #6d4c41;
+      font-size: 1.1rem;
+    }
+
+    /* CONTEÚDO DA GALERIA */
+    .gallery-container {
+      max-width: 1200px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .gallery-title {
+      color: #3e2723;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    /* GRADE DE FOTOS */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .gallery-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      transition: transform 0.3s;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-card h3 {
+      color: #3e2723;
+      padding: 1rem 1rem 0.5rem;
+    }
+
+    .gallery-card p {
+      color: #666;
+      padding: 0 1rem 1.2rem;
+    }
+
+    /* ÁREA DOS VÍDEOS */
+    .video-section {
+      margin-top: 4rem;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .video-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .video-card video {
+      width: 100%;
+      display: block;
+      background: #000;
+    }
+
+    .video-card h3 {
+      color: #3e2723;
+      padding: 1rem 1rem 0.5rem;
+    }
+
+    .video-card p {
+      color: #666;
+      padding: 0 1rem 1.2rem;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-header h1 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-card img {
+        height: 220px;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
 
-  <!-- Cabeçalho e menu -->
+  <!-- CABEÇALHO -->
   <header>
     <nav>
 
-      <!-- LOGO COM A IMAGEM -->
       <a href="index.html" class="logo">
-        <img src="jr.png" alt="Logo Café Júnior">
+        <img src="logo-cafe-junior.png" alt="Logo Café Júnior">
       </a>
 
-      <!-- Links de navegação -->
       <ul class="nav-links">
         <li><a href="index.html">Início</a></li>
         <li><a href="produtos.html">Produtos</a></li>
         <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="galeria.html">Galeria</a></li>
         <li><a href="como-chegar.html">Como Chegar</a></li>
       </ul>
 
-      <!-- Botão do carrinho -->
-      <button class="cart-btn" onclick="toggleCart()">
-        🛒 Carrinho (<span id="cart-count">0</span>)
-      </button>
+      <a href="index.html" class="cart-btn">
+        🛒 Voltar ao Início
+      </a>
 
     </nav>
   </header>
 
-  <!-- Apresentação principal -->
-  <section class="hero">
+  <!-- APRESENTAÇÃO -->
+  <section class="gallery-header">
 
-    <h1>Café Júnior</h1>
+    <h1>Galeria Café Júnior</h1>
 
     <p>
-      Cultivado no coração das montanhas cafeeiras,
-      oferecendo sabor puro e aroma incomparável.
+      Conheça nossa plantação, nossos cafés e os momentos
+      especiais da produção.
     </p>
-
-    <a href="produtos.html" class="btn-cta">
-      Ver Produtos
-    </a>
 
   </section>
 
-  <!-- Modal do carrinho -->
-  <div id="cart-modal" class="cart-modal">
+  <main class="gallery-container">
 
-    <div class="cart-content">
+    <!-- GALERIA DE FOTOS -->
+    <section>
 
-      <span class="close-cart" onclick="toggleCart()">×</span>
+      <h2 class="gallery-title">📸 Nossas Fotos</h2>
 
-      <h2>Seu Carrinho</h2>
+      <div class="gallery-grid">
 
-      <div id="cart-items"></div>
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=800"
+            alt="Plantação de café">
+          <h3>Plantação de Café</h3>
+          <p>O café cultivado com dedicação.</p>
+        </div>
 
-      <p style="margin-top: 1rem;">
-        <strong>
-          Total: <span id="cart-total">R$ 0.00</span>
-        </strong>
-      </p>
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800"
+            alt="Café preparado">
+          <h3>Nosso Café</h3>
+          <p>Sabor e aroma em cada xícara.</p>
+        </div>
 
-      <button class="btn-whatsapp" onclick="sendToWhatsApp()">
-        Finalizar via WhatsApp
-      </button>
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?w=800"
+            alt="Grãos de café">
+          <h3>Grãos Selecionados</h3>
+          <p>Qualidade em cada detalhe.</p>
+        </div>
 
-    </div>
-  </div>
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800"
+            alt="Ambiente de cafeteria">
+          <h3>Momentos com Café</h3>
+          <p>O prazer de apreciar um bom café.</p>
+        </div>
 
-  <!-- Rodapé -->
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800"
+            alt="Café em grãos">
+          <h3>Qualidade Especial</h3>
+          <p>Cuidado desde a produção.</p>
+        </div>
+
+        <div class="gallery-card">
+          <img
+            src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800"
+            alt="Preparação de café">
+          <h3>Tradição e Sabor</h3>
+          <p>Uma experiência especial em cada xícara.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- GALERIA DE VÍDEOS -->
+    <section class="video-section">
+
+      <h2 class="gallery-title">🎬 Nossos Vídeos</h2>
+
+      <div class="video-grid">
+
+        <div class="video-card">
+
+          <video controls preload="metadata">
+            <source src="videos/plantacao.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+          </video>
+
+          <h3>Conheça Nossa Plantação</h3>
+
+          <p>
+            Um pouco do ambiente onde nosso café é cultivado.
+          </p>
+
+        </div>
+
+        <div class="video-card">
+
+          <video controls preload="metadata">
+            <source src="videos/producao.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+          </video>
+
+          <h3>Produção do Café</h3>
+
+          <p>
+            Conheça um pouco do processo de produção.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
   <footer>
     <p>© 2026 Café Júnior. Todos os direitos reservados.</p>
   </footer>
-
-  <!-- JavaScript -->
-  <script src="script.js"></script>
 
 </body>
 </html>
